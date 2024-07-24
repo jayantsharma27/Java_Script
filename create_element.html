@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create_element</title>
+    <style>
+    .container{
+        width: 40%; 
+        margin: auto;
+        text-align: center;
+        box-shadow: 0px 0px 2px;
+    }
+    input{
+       margin-top:2%;
+       margin-bottom: 2%;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text">
+        <button>Submit</button>
+        <!-- <h1></h1> -->
+    </div>
+    <script>
+        document.querySelector("button").onclick=function(){
+            let val = document.querySelector("input").value;
+            // document.querySelector("h1").innerHTML=val;
+            let h = document.createElement("h1");
+            // h.setAttribute("class","heading")
+            h.className = "heading"
+            console.log(h) ;
+            h.innerHTML = val ;
+            document.querySelector(".container").append(h)
+        }
+    </script>
+</body>
+</html>
