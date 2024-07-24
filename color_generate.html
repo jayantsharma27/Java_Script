@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color_generate</title>
+</head>
+<body>
+    <!-- <input type="text" disabled> -->
+    <!-- <button>Generate</button> -->
+</body>
+<script>
+    //
+    // let x = []
+    // document.querySelector("button").onclick=function(){
+    //     if(x.length<=3){
+    //         let rgb = document.querySelector("input").value+=(`${Math.floor(Math.random()*255)},`);
+    //         x = rgb.split(",")
+    //     }
+    //     x.pop()
+    //     let c = x.join(",")
+    //     console.log(c)
+    //     document.body.style.backgroundColor = `rgb(${c})`
+    // }
+    //
+    // document.querySelector("button").onclick=function(){
+    //     let color = `${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)}`;
+    //     document.querySelector("input").value=color;
+    //     document.body.style.backgroundColor=`rgb(${color})`
+    // }
+    setInterval(()=>{
+        let color = `${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)}`;
+        // document.querySelector("input").value=color;
+        document.body.style.backgroundColor=`rgb(${color})`
+    },1000)
+</script>
+</html>
