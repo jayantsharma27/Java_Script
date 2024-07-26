@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #in{
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+        }
+        #out{
+            height: 400px;
+            width: 400px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+   <input type="text" name="" id="in">
+    <div id="out"></div>
+    <script>
+document.getElementById("in").oninput=function(){
+let v = document.getElementById("in").value
+    console.log(v)
+  document.getElementById("out").innerText=v;
+}
+
+    </script>
+</body>
+</html>
