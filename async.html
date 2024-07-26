@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        .container{
+            width: 100%;
+            display: flex;
+            flex-wrap:wrap;
+            text-align: center;
+            box-shadow: none;
+        }
+        input
+        {
+            margin-left: 450px;
+            padding: 10px;
+        }
+        #src{
+            width: 15%;
+        }
+        div{
+            width: 20%;
+            box-shadow: 0px 0px 5px grey;
+               margin: 10px ;
+              flex-grow:3;
+        }
+        button{
+            width: 40%;
+            background-color: black;
+            color:white ;
+            padding: 10px;
+            border: none;
+            margin: 10px;
+             }
+        img{
+            height: 100px;
+        }     
+  
+    </style>
+</head>
+<body>
+   
+    <input type="text" name="">
+    <button id="src">Search</button>
+    <i class="fa-solid fa-cart-shopping"></i><sup><span id="ct"> </span></sup>
+
+    <div class="container"></div>
+    <script>
+        // console.log("I am one")
+        // console.log("I am two")
+        // console.log("I am three")
+        // setTimeout(()=>{
+        // for(let i=0;i<100;i++){
+        //     console.log(i)
+        // }
+        // },3000)
+        // console.log("I am four")
+        // console.log("I am five")
+        // setTimeout(()=>{
+        //     console.log("Hello")
+        // },3000)
+       
+       
+        //call back ---> call back hell ---> promises ---> promise chain ---> async await
+        
+
+        // function food(dish,order){
+        //     setTimeout(()=>{
+        //         console.log(dish)
+        //         if(order){
+        //         order();
+        //         }
+        //     },2000)
+
+        //  } 
+        //  food("burger",()=>{
+        //     food("patties",()=>{
+        //         food("french fries")
+        //     })
+        //  })
+
+
+
+        // function time(dish){
+        //     setTimeout(()=>{
+        //         console.log(dish)
+        //         time(dish)
+        //     },1000)
+        // }
+        // time("pizza")
+        // time("Burger")
+
+        // let d = fetch('https://dummyjson.com/products')
+        // console.log(d)
+        // d.then((item)=>{
+        //     // console.log(item)
+        //     // console.log(item.json())
+        //      item.json().then((data)=>{
+        //         console.log(data.products)
+        //     })
+        // })
+       
+       
+        async function fetchdata(data=""){
+            try{
+            let d = await fetch('https://dummyjson.com/products')
+            console.log(d)
+          //  console.log(await d.json())
+           j = await d.json()
+            console.log(j.products)
+            jp = j.products
+            let filter_product = jp.filter((item)=>item.title.includes(data))
+            // console.log(jp[0])
+            for(i of filter_product){
+            let div = document.createElement('div')
+            let title=document.createElement("h2")
+            let price=document.createElement("h4")
+            let image=document.createElement("img")
+            let desc=document.createElement("p")
+            let add=document.createElement("button")
+            let buy=document.createElement("button")
+            title.innerHTML="Title:"+i.title
+            price.innerHTML="Price:"+i.price
+            desc.innerHTML="Description:"+i.description
+            image.src=i.thumbnail
+            add.innerHTML="Add To Cart"
+            buy.innerHTML="Buy Now"
+            add.className="add";
+            
+            div.append(image)
+            div.append(title)
+            div.append(price)
+            div.append(desc)
+            div.append(add)
+            div.append(buy)
+            document.querySelector(".container").append(div)
+        }
+         let counter = 0 ;
+        let a = document.querySelectorAll(".add")
+        //console.log(a)
+        for(i of a){
+            // console.log(i)
+            i.onclick=function(){
+            console.log(counter++)
+            document.querySelector("span").innerHTML=counter;}
+        }
+        document.querySelector("input").oninput=function(event){
+            console.log(event)
+            let t = event.target
+            // console.log(t)
+            let data =t.value
+            // console.log(data)
+            // let filter = jp.filter((item)=>item.title.includes(data))
+            fetchdata(data)
+        }
+        
+    }
+        catch{
+            console.log("data not fetched")
+        }
+    }
+
+        fetchdata()
+
+        
+
+    </script>
+</body>
+</html>
