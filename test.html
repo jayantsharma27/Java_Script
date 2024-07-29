@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        
+        table{
+            border: 2px solid black;
+        }
+        tr{
+            border: 2px solid black;
+        }
+        
+    </style>
+</head>
+<body>
+    <input type="text" id="n">
+    <input type="number" id="a">
+    <input type="text" id="no">
+    <input type="email" name="" id="mail">
+    <input type="radio" name="g" value="Male"><label for="">Male</label>
+    <input type="radio" name="g" value="Female" ><label for="">Female</label>
+    <input type="radio" name="g" value="Other"><label for="">Other</label>
+    <select name="" id="c">
+        <option value="1">Kota</option>
+        <option value="2">Jaipur</option>
+    </select>
+    <button>Submit</button>
+    <table id="t">
+        <tr>
+            <th>S.no</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Hometown</th>
+            <th>Actions</th>
+        </tr>
+    </table>
+    <script>
+        let s = 1
+        document.querySelector("button").onclick=function(){
+            let n = document.querySelector("#n").value
+            let a = document.querySelector("#a").value
+            let no = document.querySelector("#no").value
+            let mal = document.querySelector("#mail").value
+            let g = document.getElementsByName("g")
+            let c = document.querySelector("#c").value
+
+            console.log(s)          
+            console.log(n)
+            console.log(a)
+          
+            let f = document.createElement("tr")
+            let sf = document.createElement("td")
+            let nf = document.createElement("td")
+            let na = document.createElement("td")
+            let nof = document.createElement("td")
+            let malf = document.createElement("td")
+            let gf = document.createElement("td")
+            let cf = document.createElement("td")
+         
+
+            console.log(f)
+            console.log(sf)
+            console.log(nf)
+            console.log(na)
+            console.log(g)
+            sf.innerHTML = s++
+            nf.innerHTML = n
+            na.innerHTML = a
+            nof.innerHTML = no
+            malf.innerHTML = mal
+            for(i=0;i<g.length;i++){
+                if(g[i].checked){
+                    gf.innerHTML=g[i].value
+                }
+
+            }
+            if(c==1){
+                cf.innerHTML = "Kota"
+            }
+            if(c==2){
+                cf.innerHTML = "Jaipur"
+            }
+            f.append(sf)
+            f.append(nf)
+            f.append(na)
+            f.append(nof) 
+            f.append(malf) 
+            f.append(gf)
+            f.append(cf)
+            document.querySelector("#t").append(f)
+        }
+
+    </script>
+</body>
+</html>

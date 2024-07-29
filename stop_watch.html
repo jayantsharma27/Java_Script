@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stop_watch</title>
+    <style>
+    div{
+        height:50px;
+        width: 50px;
+        border: 2px solid black;
+    }
+    </style>
+</head>
+<body>
+    <div id="h"></div>
+    <div id="m"></div>
+    <div id="s"></div>
+    <!-- <div id="ms"></div> -->
+    <button id="st">Start</button>
+    <button id="stp">Stop</button>
+    <button id="rst">Reset</button>
+</body>
+<script>
+    let i = 0;
+    let j = 0;
+    let k = 0;
+    let l = 0;
+    let stop;
+    document.querySelector("#st").onclick=function (){
+       stop = setInterval(()=>
+            {
+       if(i<60){
+        document.querySelector("#s").innerHTML=i++;
+       }
+       if(i==60){
+        i = 0;
+        j++;
+       }
+       if(j<60){
+        document.querySelector("#m").innerHTML=j;
+       }
+       if(j==60){
+        j = 0;
+        k++;
+       }
+    
+        document.querySelector("#h").innerHTML=k;
+       
+    
+        },1000)
+    }
+    document.querySelector("#rst").onclick=function(){
+      clearInterval(stop)
+      document.querySelector("#s").innerHTML="0";
+      document.querySelector("#m").innerHTML="0";
+      document.querySelector("#h").innerHTML="0";
+      i = 0;
+      j = 0;
+      k = 0;
+    }
+    document.querySelector("#stp").onclick=function(){
+        clearInterval(stop)
+    }
+
+</script>
+</html>

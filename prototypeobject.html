@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pto</title>
+</head>
+<body>
+    <script>
+        // let obj={
+        //     output:function(){
+        //         console.log("hi")
+        //     },
+        //     abc(){
+        //         console.log("abc")
+        //     }
+        // }
+        // obj.output()
+        // obj.abc()
+        // obj.xyz()
+        // console.log(obj.toString())
+        // for(i in obj){
+        //     console.log(i)
+        // }
+        // let j = "jay"
+        // console.log(j)
+        let obj1={
+            output(){
+                console.log("output")
+            }
+        }
+        let obj2={
+            show(){
+                console.log("show")
+            }
+        }
+        obj1.output()
+        obj1.__proto__=obj2
+        console.log(obj1)
+        obj1.show()
+
+
+    </script>
+</body>
+</html>

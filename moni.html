@@ -19,11 +19,20 @@
 </head>
 <body>
    <input type="text" name="" id="in">
-    <div id="out"></div>
+   <h1>Css Properties</h1>
+   <input type="text" name="" id="color">
+   <input type="text" id="bg">
+   <input type="number" id="fnt">
+  <div id="out"></div>
     <script>
 document.getElementById("in").oninput=function(){
 let v = document.getElementById("in").value
     console.log(v)
+    document.querySelector("#color").oninput=function(event){
+        let c = event.trigger
+        
+    console.log(c)
+    }
   document.getElementById("out").innerText=v;
 }
 

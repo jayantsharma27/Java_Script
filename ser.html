@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            height: 300px;
+            width: 470px;
+            box-shadow: 0px 0px 5px  grey; 
+            margin: auto;
+         
+        }
+        input{
+        padding: 10px;
+        margin: 20px;
+        }
+        button{
+           
+            display: block;
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <input type="text" name="" class="inp" id="t0" placeholder="Enter Your Name">
+        <input type="email" name="" class="inp" id="t1" placeholder="Enter Your Email">
+        <input type="number" name="" class="inp" id="t2" placeholder="Enter Your age">
+        <input type="number" name="" class="inp" id="t3" placeholder="Enter Your Mobile no.">
+        <input type="text" name="" class="inp" id="t4" placeholder="Enter Your city">
+        <input type="text" class="inp" id="t5" placeholder="Pincode">
+        <br>
+        <button id="btn">Submit</button>
+    </div>
+    <script>
+        document.getElementById("btn").onclick=function(){
+            let v =document.getElementsByClassName("inp")
+            let l = v.length
+            // for(let i=0;i<l;i++){
+            // console.log(v[i].value)
+            // }
+            for(i of v){
+                console.log(i.value)
+            }
+
+        }
+    </script>
+</body>
+</html>

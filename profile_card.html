@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile_card</title>
+    <style>
+        body{
+            display: flex;
+            height: 100vh;
+        }
+        .left{
+            border: 2px solid black;
+            width: 50%;
+            height: 70%;
+        }
+        .right{
+            border: 2px solid black;
+            width: 50%;
+            height: 70%;
+        }
+        #circle{
+            border: 2px solid black;
+            border-radius: 50%;
+            width: 50%;
+            height: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <p>Image:</p>
+        <input type="text" id="img">
+        <p>Name:</p>
+        <input type="text" id="name">
+        <p>Email:</p>
+        <input type="email" name="" id="email">
+        <p>Course</p>
+        <input type="text" name="" id="course">
+        <p>Mobile:</p>
+        <input type="number" id="no">
+    </div>
+    <div class="right">
+        <div id="circle"></div>
+        <ul>
+            <li id="n">Name:</li>
+            <li id="e">Email:</li>
+            <li id="c">Course:</li>
+            <li id="m">Mobile No:</li>
+        </ul>
+    </div>
+    <script>
+        let a = document.querySelectorAll("input");
+
+        for(let i of a){
+
+            i.oninput = function(){
+                console.log(i)
+            }
+        }
+    </script>
+</body>
+</html>

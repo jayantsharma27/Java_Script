@@ -5,13 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        h1{
+        /* h1{
             color: red;
-        }
+        } */
+       
+
+
+        /* .color{
+            height: 50px;
+            width: 50px;
+            border: 2px solid black;
+            border-radius: 50%;
+            display: inline-block;
+        } */
+        /* #red{
+            background-color: red;
+        } */
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.box{
+    height: 200px;
+    width: 400px;
+    border: 2px solid black;
+}
+
     </style>
 </head>
-<body>
-    <h1>This is my heading tag</h1>
+<body id="bo">
+    <!-- <h1>This is my heading tag</h1>
+    <button id="btn">Submit</button> -->
+    
+    
+    <!-- <div class="color" id="red"></div>
+    <div class="color" id="yellow"></div>
+    <div class="color" id="green"></div>
+    <div class="color" id="black"></div> -->
+
+    <div class="box"><p id="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate cupiditate consequatur sequi facere illo quo facilis debitis qui dignissimos similique officia voluptatibus ipsam deleniti magni corrupti sit, hic eos non?</p>
+    <button id="up">Uppercase</button>
+    <button id="low">Lowercase</button>
+    <button id="b">+</button>
+    <button id="s">-</button>
+  <input type="color" id="c">
+  <input type="range" id="r">
+    </div>
+
+
 
     <script>
         // console.log("Hello World!");
@@ -142,13 +185,50 @@
 // console.log(ans)
 // ans()
 
-function output(a,b,add){
-add(a,b)
+// function output(a,b,add){
+// add(a,b)
+// }
+// function add(a,b){
+//     console.log(a+b)
+// }
+// output(10,20,add)
+
+// document.getElementById("btn").onclick=function(){
+//     console.log("Hello")
+//     alert("Hey")
+// }
+// document.getElementById("red").onclick =function(){
+// document.getElementById("bo").style.backgroundColor="red"
+// }
+
+document.getElementById("up").onclick=function(){
+    document.getElementById("p").style.textTransform="uppercase"
 }
-function add(a,b){
-    console.log(a+b)
+
+document.getElementById("low").onclick=function(){
+    document.getElementById("p").style.textTransform="lowercase"
 }
-output(10,20,add)
+let i = 0;
+document.getElementById("b").onclick=function(){
+    
+
+   
+        document.getElementById("p").style.fontSize=i+"px"
+        console.log(i)
+        i++
+    }
+   document.getElementById("c").oninput=function(){
+   let c = document.getElementById("c").value;
+document.getElementById("p").style.color=c;
+
+   }
+   document.getElementById("r").oninput=function(){
+   let r = document.getElementById("r").value;
+   console.log(r)
+ document.getElementById("p").style.fontSize=r+"px";
+
+   }
+
 
     </script>
 </body>

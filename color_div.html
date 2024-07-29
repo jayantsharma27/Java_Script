@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color_div</title>
+    <style>
+        *{
+            margin:0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container{
+            width: 500px;   
+            box-shadow: 0px 0px 5px;
+        }
+        .upper{
+            text-align: center;
+            padding: 20px 0px;
+        }
+         .lower{
+            padding: 20px 0px;
+            text-align: center;
+         }
+        .d{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            box-shadow: 0px 0px 5px;
+        }
+        button{
+            background-color:limegreen;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+        }
+        input{
+            border: none;
+            padding: 5px;
+            box-shadow: 0px 0px 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       <div class="upper">
+        <input type="text" placeholder="Enter your color">
+        <input type="number" placeholder="Enter your div">
+        <button>Submit</button>
+       </div>
+      <div class="lower">
+        <div class="d" id="1"></div>
+        <div class="d" id="2"></div>
+        <div class="d" id="3"></div>
+        <div class="d" id="4"></div>
+        <div class="d" id="5"></div>
+        <div class="d" id="6"></div>
+        <div class="d" id="7"></div>
+        <div class="d" id="8"></div>
+      </div>
+    </div>
+<script>
+    document.querySelector("button").onclick=function(){
+        let a = document.querySelectorAll("input")
+        console.log(a)
+        let j = 0 
+        let b = new Array();
+        for(i of a){
+         console.log(i.value)
+          b.push(i.value)
+
+        }
+        console.log(b)
+       let d = document.querySelectorAll(".d");
+
+       for(let i of d){
+
+          if(i.id == b[1]){
+            i.style.backgroundColor = b[0]
+          }
+       }
+
+    }
+</script>
+
+</body>
+</html>

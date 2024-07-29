@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // let obj = {
+    //     rollno:1,
+    //     name:"jay",
+    //     email:"jay@mgamil.com",
+    //     city:"Jaipur"
+    // };
+    // console.log(obj) 
+    // console.log(obj.rollno,obj.name,obj.email,obj.city)
+    // console.log(obj["name"],obj["city"])
+
+    // for(i in obj){
+    //     console.log(i,obj[i])
+    // }
+
+    let obj = [
+    {
+        rollno:1,
+        name:"jay",
+        email:"jay@mgamil.com",
+        city:"Jaipur",
+        age:21
+    },
+    {
+        rollno:2,
+        name:"ant",
+        email:"ant@mgamil.com",
+        city:"Jodhpur",
+        age:14
+    }, {
+        rollno:3,
+        name:"sha",
+        email:"sha@mgamil.com",
+        city:"Upw",
+        age:18
+    }, {
+        rollno:4,
+        name:"rma",
+        email:"rma@mgamil.com",
+        city:"Jaipur",
+        age:1
+    }, {
+        rollno:5,
+        name:"deadpool",
+        email:"dd@mgamil.com",
+        city:"Upw",
+        age:134
+    }, {
+        rollno:6,
+        name:"wolverine",
+        email:"wol@mgamil.com",
+        city:"Delhi",
+        age:16
+    }, {
+        rollno:7,
+        name:"jay7",
+        email:"jay7@mgamil.com",
+        city:"Jaipur",
+        age:17
+    }, {
+        rollno:8,
+        name:"jay8",
+        email:"jay@mgamil.com",
+        city:"Jaipur",
+        age:20
+    }, {
+        rollno:9,
+        name:"jay",
+        email:"jay@mgamil.com",
+        city:"Jaipur",
+        age:18
+    }, {
+        rollno:10,
+        name:"jay",
+        email:"jay@mgamil.com",
+        city:"Jaipur",
+        age:21
+    }
+    ]
+    let rs = obj.filter((item)=>item.age>18)
+    console.log(rs)
+</script>
+</html>
